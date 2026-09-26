@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/agent/:path*", "destination": "/api/agent" },
+    { "source": "/owner/:path*", "destination": "/api/agent" },
+    { "source": "/permissions", "destination": "/api/agent" }
+  ]
+}

@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
-    "composite": true,
+    "target": "ES2022",
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "types": ["node"]
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "agent", "api"]
 }

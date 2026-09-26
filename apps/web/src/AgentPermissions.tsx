@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AGENT_API_URL } from './lib/config';
+import i18n from './i18n';
 
 type Text = { en: string; ja: string };
 type Permission = { id: string; group: 'read' | 'write'; route: string; label: Text; detail: Text };
@@ -9,11 +9,14 @@ type Owner = { enabled: string[]; agents: { agentId: string; disabled: string[] 
 // Call Matsuri's agent API; its error message is shown as is.
 // Matsuri のエージェント API を呼び出す。エラー文はそのまま表示する。
 async function call<T>(path: string, token?: string, body?: unknown): Promise<T> {
-  const response = await fetch(`${AGENT_API_URL}${path}`, {
+  const response = await fetch(path, {
     method: body ? 'POST' : 'GET',
     headers: { 'content-type': 'application/json', ...(token ? { 'Owner-Session': token } : {}) },
     body: body ? JSON.stringify(body) : undefined
   });
+  // With the agent API off, the server answers with the page or an error page instead of JSON.
+  // エージェント API が停止中は、サーバーが JSON ではなくページやエラーページを返す。
+  if (!response.headers.get('content-type')?.includes('application/json')) throw new Error(i18n.t('agentApiMissing'));
   const result = await response.json();
   if (!response.ok) throw new Error(result.error ?? `HTTP ${response.status}`);
   return result as T;
@@ -52,7 +55,7 @@ export default function AgentPermissions({ address }: { address: string | null }
 
   const open = () => {
     dialog.current?.showModal();
-    if (AGENT_API_URL && !permissions.length) run(async () => setPermissions(await call<Permission[]>('/permissions')));
+    if (!permissions.length) run(async () => setPermissions(await call<Permission[]>('/permissions')));
   };
 
   // Proves wallet ownership with a message signature: no transaction, no gas.
@@ -117,10 +120,8 @@ export default function AgentPermissions({ address }: { address: string | null }
           <h2>{t('agentPermissions')}</h2>
           <p>{t('agentPermissionsNote')}</p>
         </div>
-        {!AGENT_API_URL && <p>{t('agentApiMissing')}</p>}
-        {AGENT_API_URL && groups()}
-        {AGENT_API_URL &&
-          !owner &&
+        {groups()}
+        {!owner &&
           (address ? (
             <button onClick={signIn} disabled={busy}>
               {t('agentSignIn')}

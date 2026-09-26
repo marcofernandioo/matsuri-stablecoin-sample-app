@@ -5,18 +5,22 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && tsc -p tsconfig.node.json && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@curvegrid/multibaas-sdk": "1.1.1",
+    "@upstash/redis": "1.39.0",
+    "agentic-world": "github:ryuux05/eth-tokyo-2026#c904476d8dee23a1b76e8ed714b1785768068d8e",
     "ethers": "6.17.0",
     "i18next": "26.4.2",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "react-i18next": "17.0.15"
+    "react-i18next": "17.0.15",
+    "viem": "2.56.9"
   },
   "devDependencies": {
+    "@types/node": "24.13.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
