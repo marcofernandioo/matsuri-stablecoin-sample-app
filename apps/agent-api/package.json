@@ -1,0 +1,23 @@
+{
+  "name": "matsuri-agent-api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env --import tsx server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@curvegrid/multibaas-sdk": "1.1.1",
+    "agentic-world": "file:../../../eth-tokyo-2026",
+    "viem": "2.56.9"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.6",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

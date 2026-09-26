@@ -19,3 +19,7 @@ MultiBaas contract labels select ABI/version; address aliases map to deployed ad
 ## 5) Demo Scope / デモ範囲
 This is a hackathon demo. Contracts enforce issuer ownership, but there is no fiat backing, merchant verification, or production fraud prevention.
 ハッカソン向けデモ。コントラクトで発行者権限を制御するが、法定通貨の裏付け・加盟店確認・本番向け不正対策は未実装。
+
+## 6) Agent Permissions / エージェントの権限
+AI agents sign in to `apps/agent-api` as their own Agentic World accounts; the MultiBaas key stays server-side and contracts are unchanged. `permissions.json` is the only permission list and assigns each agent route one read or write permission. The agent's on-chain owner switches each permission once for all their agents in the web app's popup (reads start on, writes start off) and can narrow a single agent.
+AI エージェントは自身の Agentic World アカウントとして `apps/agent-api` にサインインする。MultiBaas キーはサーバー側に置き、コントラクトは変更しない。`permissions.json` が唯一の権限一覧で、各ルートに読み取りか書き込みの権限を1つ割り当てる。エージェントのオンチェーン所有者が Web アプリのポップアップで全エージェント分の権限を切り替え（読み取りは最初からオン、書き込みはオフ）、個別のエージェントを絞り込める。

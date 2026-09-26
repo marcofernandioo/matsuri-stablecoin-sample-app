@@ -1,0 +1,36 @@
+[
+  {
+    "id": "tickets.read",
+    "group": "read",
+    "route": "GET /agent/tickets",
+    "label": { "en": "See balances and tickets", "ja": "残高とチケットの確認" },
+    "detail": { "en": "MJPY balance, event prices and vouchers held.", "ja": "MJPY 残高、イベント価格、保有バウチャー。" }
+  },
+  {
+    "id": "history.read",
+    "group": "read",
+    "route": "GET /agent/history",
+    "label": { "en": "See purchase history", "ja": "購入履歴の確認" },
+    "detail": { "en": "The agent's own purchases and redemptions.", "ja": "エージェント自身の購入・利用履歴。" }
+  },
+  {
+    "id": "purchase.prepare",
+    "group": "write",
+    "route": "POST /agent/purchase",
+    "label": { "en": "Buy vouchers", "ja": "バウチャーの購入" },
+    "detail": {
+      "en": "Matsuri prepares two calls, approve the exact price then buy, which the agent's own account executes.",
+      "ja": "Matsuri が「正確な金額の承認」と「購入」の2つの呼び出しを準備し、エージェント自身のアカウントが実行します。"
+    }
+  },
+  {
+    "id": "redeem.prepare",
+    "group": "write",
+    "route": "POST /agent/redeem",
+    "label": { "en": "Redeem vouchers", "ja": "バウチャーの利用" },
+    "detail": {
+      "en": "Matsuri prepares the redeem call, which the agent's own account executes.",
+      "ja": "Matsuri が利用の呼び出しを準備し、エージェント自身のアカウントが実行します。"
+    }
+  }
+]

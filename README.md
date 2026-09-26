@@ -158,6 +158,7 @@ npm run dev
 | --- | --- |
 | `apps/web/src/App.tsx` | Issuer panel, market, dashboard / 発行者パネル・市場・ダッシュボード |
 | `apps/web/src/lib/` | MultiBaas, wallet, network, transaction helpers / API・ウォレット・ネットワーク・送信処理 |
+| `apps/agent-api/` | API for AI agents ([Agentic World](https://github.com/ryuux05/eth-tokyo-2026)) and their permissions / AI エージェント向け API と権限 |
 | `apps/web/src/data/events.ts` | Static event descriptions / 静的なイベント説明 |
 | `contracts/contracts/` | ERC20 stablecoin and ERC721 vouchers / ステーブルコイン・バウチャー |
 | `contracts/ignition/modules/MatsuriDemo.ts` | Deployment, linking, event seeding / デプロイ・紐付け・初期設定 |

@@ -349,3 +349,62 @@ button:hover {
   color: #fff;
   background: var(--accent-strong);
 }
+
+/* Agent permissions popup */
+/* エージェント権限のポップアップ */
+.agent-dialog {
+  width: min(640px, calc(100% - 32px));
+  max-height: calc(100% - 32px);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.agent-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.agent-dialog::backdrop {
+  background: rgba(27, 27, 31, 0.4);
+}
+
+.permission-group {
+  display: grid;
+  gap: 8px;
+}
+
+.permission {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.permission input {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin-top: 2px;
+}
+
+.permission code {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.agent-id {
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.agent-error {
+  color: var(--accent-strong);
+  font-size: 13px;
+}

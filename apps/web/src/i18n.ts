@@ -55,7 +55,18 @@ const resources = {
       corsTitle: 'CORS setup required',
       corsBody:
         'Add this app origin to MultiBaas: Admin > CORS Origins. Example: http://localhost:5173',
-      language: 'Language'
+      language: 'Language',
+      agentPermissions: 'Agent permissions',
+      agentPermissionsNote: 'What AI agents you own may do at Matsuri. Your switches apply to all your agents; reads start on, writes start off.',
+      agentApiMissing: 'Set VITE_AGENT_API_URL to manage agent permissions.',
+      agentConnectFirst: 'Connect MetaMask to manage your agents.',
+      agentSignIn: 'Sign in with wallet',
+      agentNone: 'None of your agents has signed in to Matsuri yet.',
+      agentYourAgents: 'Your agents',
+      agentNarrowNote: 'Switch a permission off for one agent only. It cannot go beyond your switches above.',
+      permRead: 'Read',
+      permWrite: 'Write',
+      close: 'Close'
     }
   },
   ja: {
@@ -110,7 +121,18 @@ const resources = {
       contractPairs: 'コントラクト + アドレスエイリアス',
       corsTitle: 'CORS 設定が必要です',
       corsBody: 'MultiBaas の Admin > CORS Origins に本アプリの Origin を追加してください。例: http://localhost:5173',
-      language: '言語'
+      language: '言語',
+      agentPermissions: 'エージェントの権限',
+      agentPermissionsNote: 'あなたが所有する AI エージェントが Matsuri でできること。スイッチは全エージェントに適用されます。読み取りは最初からオン、書き込みはオフです。',
+      agentApiMissing: 'エージェントの権限管理には VITE_AGENT_API_URL を設定してください。',
+      agentConnectFirst: 'MetaMask を接続するとエージェントを管理できます。',
+      agentSignIn: 'ウォレットでサインイン',
+      agentNone: 'まだ Matsuri にサインインしたエージェントはありません。',
+      agentYourAgents: 'あなたのエージェント',
+      agentNarrowNote: '1つのエージェントだけ権限をオフにできます。上のスイッチを超えて許可することはできません。',
+      permRead: '読み取り',
+      permWrite: '書き込み',
+      close: '閉じる'
     }
   }
 } as const;

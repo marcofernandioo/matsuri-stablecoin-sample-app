@@ -9,6 +9,10 @@ dist/
 .env.*
 !.env.example
 
+# agent permissions switched by owners
+apps/agent-api/grants.json
+apps/agent-api/grants.json.tmp
+
 # system files
 .DS_Store
 Thumbs.db

@@ -47,6 +47,10 @@ export const DEFAULT_CHAIN_KEY: ChainConfig['key'] =
 export const MULTIBAAS_BASE_URL = import.meta.env.VITE_MB_BASE_URL ?? '';
 export const MULTIBAAS_API_KEY = import.meta.env.VITE_MB_API_KEY ?? '';
 
+// Matsuri's agent API (apps/agent-api), used by the agent permissions popup.
+// エージェント権限ポップアップが使う Matsuri のエージェント API（apps/agent-api）。
+export const AGENT_API_URL = import.meta.env.VITE_AGENT_API_URL ?? '';
+
 // MultiBaas contract labels are used to select a contract ABI/version.
 // MultiBaas のコントラクトラベルは ABI/バージョン選択に使う。
 export const CONTRACT_LABELS = {

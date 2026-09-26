@@ -19,6 +19,7 @@ import {
 import { fetchStablecoinBalances, fetchVoucherActivity } from './lib/eventQueries';
 import { submitWithMetaMask } from './lib/tx';
 import { MATSURI_EVENTS } from './data/events';
+import AgentPermissions from './AgentPermissions';
 
 const DECIMALS = 18;
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
@@ -408,6 +409,7 @@ export default function App() {
             )}
             <button onClick={handleConnect}>{t('connectWallet')}</button>
           </div>
+          <AgentPermissions address={address} />
         </div>
       </header>
 
